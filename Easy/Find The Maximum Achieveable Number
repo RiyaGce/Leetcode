@@ -1,0 +1,9 @@
+class Solution {
+    public int theMaximumAchievableX(int num, int t) 
+    {
+        int res,fin;
+       res=num+t;
+       fin=res+t;
+       return fin;
+    }
+}
