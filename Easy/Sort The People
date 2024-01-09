@@ -1,0 +1,33 @@
+class Solution {
+    public String[] sortPeople(String[] names, int[] heights) 
+    {
+        int inc=0;
+        int len=names.length;
+        int arr1[]=new int[len];
+        for(int i=0;i<len;i++)
+        {
+            arr1[i]=heights[i];
+        }
+        Arrays.sort(heights);
+        String nam[]=new String[len];
+        for(int i=0;i<len;i++)
+        {
+           for(int j=0;j<len;j++)
+           {
+               if(heights[i]==arr1[j])
+               {
+               nam[inc]=names[j];
+               inc++;
+               }
+           }
+        }
+        int incre=0;
+        String fin[]=new String[len];
+        for(int i=len-1;i>=0;i--)
+        {
+        fin[incre]=nam[i];
+        incre++;
+        }
+        return fin;
+    }
+}
