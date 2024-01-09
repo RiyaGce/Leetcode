@@ -1,0 +1,24 @@
+class Solution {
+    public int maxProduct(int[] nums) 
+    {
+        int firstmax,secondmax,index=0 ;
+        firstmax=nums[0];
+        secondmax=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>firstmax)
+            {
+            firstmax=nums[i];
+            index=i;
+            }
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>secondmax&&index!=i)
+            secondmax=nums[i];
+        }
+        // return secondmax;
+        return (firstmax-1)*(secondmax-1);
+
+    }
+}
