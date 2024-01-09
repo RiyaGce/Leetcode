@@ -1,0 +1,39 @@
+class Solution {
+    public int maxProductDifference(int[] nums)
+     {
+        int firstmax,secondmax,firstmin,secondmin;
+        firstmax=nums[0];
+        firstmin=nums[0];
+        int index=0,minindex=0;
+        for(int i=1;i<nums.length;i++)
+        {
+            if(nums[i]>firstmax)
+            {
+            firstmax=nums[i];
+            index=i;
+            }
+        }
+         for(int i=1;i<nums.length;i++)
+        {
+            if(nums[i]<firstmin)
+            {
+            firstmin=nums[i];
+            minindex=i;
+            }
+        }
+        secondmax=firstmin;
+        secondmin=firstmax;
+        for(int i=0;i<nums.length;i++)
+        {
+        if(nums[i]>secondmax&&index!=i)
+        secondmax=nums[i];
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+        if(nums[i]<secondmin&&minindex!=i)
+        secondmin=nums[i];
+        }
+        return (firstmax*secondmax)-(firstmin*secondmin);
+    
+    }
+}
