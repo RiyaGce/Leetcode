@@ -1,0 +1,15 @@
+lass Solution {
+    public int subtractProductAndSum(int n) 
+    {
+        int mod,pro=1,sum=0;
+        int temp=n;
+        while(n!=0)
+        {
+            mod=n%10;
+            pro*=mod;
+            sum+=mod;
+            n=n/10;
+        }
+        return (pro-sum);
+    }
+}
