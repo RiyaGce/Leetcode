@@ -1,0 +1,18 @@
+class Solution {
+    public int getDecimalValue(ListNode head) {
+        Stack<Integer> s = new Stack<>();
+        ListNode temp = head;
+        int ans=0;
+        while(temp!=null)
+        {
+            s.push(temp.val);
+            temp=temp.next;
+        }
+        for(int i=0;;i++){
+            if(s.empty())break;
+            ans+=Math.pow(2,i)*s.peek();
+            s.pop();
+        }
+        return ans;
+    }
+}
